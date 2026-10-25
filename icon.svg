@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7667ed"/><stop offset="1" stop-color="#ff8c64"/></linearGradient></defs>
+  <rect width="512" height="512" rx="116" fill="url(#g)"/><circle cx="256" cy="270" r="158" fill="#fff8e8"/>
+  <path d="M126 176l50-78 38 90M386 176l-50-78-38 90" fill="#fff8e8" stroke="#392f83" stroke-width="20" stroke-linejoin="round"/>
+  <circle cx="203" cy="253" r="18" fill="#392f83"/><circle cx="309" cy="253" r="18" fill="#392f83"/><path d="M218 319q38 36 76 0" fill="none" stroke="#392f83" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="178" text-anchor="middle" font-family="serif" font-size="92" font-weight="700" fill="#ff7257">ج</text>
+</svg>

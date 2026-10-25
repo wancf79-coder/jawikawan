@@ -1,0 +1,11 @@
+{
+  "name": "JawiKawan — Belajar Jawi & Membaca",
+  "short_name": "JawiKawan",
+  "description": "Permainan Jawi dan membaca Bahasa Melayu untuk anak 5–8 tahun.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8e8",
+  "theme_color": "#5f4bd8",
+  "orientation": "portrait-primary",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
