@@ -1,0 +1,50 @@
+name: Import RimbaRia audio once
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-rimbaria-audio.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download prepared RimbaRia audio
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audio/voice audio/music
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-a550-8211-aff7-0db504df56f1/raw?se=2026-10-26T15%3A16%3A13Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T02%3A00%3A09Z&ske=2026-10-27T02%3A00%3A09Z&sks=b&skv=2026-02-06&sig=A8qy/vxy1Sld0IEHnfLLUJmQuWNJ%2B9Eh3CyJVmb9GxY%3D' --output 'audio/voice/RR01-intro-soalan.mp3'
+          test -s 'audio/voice/RR01-intro-soalan.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-5d40-8211-ba03-8eb9bc8ac180/raw?se=2026-10-26T15%3A16%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T00%3A23%3A44Z&ske=2026-10-27T00%3A23%3A44Z&sks=b&skv=2026-02-06&sig=M1EZMv%2B33V8%2BNWDu55q1Ynx1ZapAg2O7iMIUsAU5F3o%3D' --output 'audio/voice/RR02-jawapan-betul.mp3'
+          test -s 'audio/voice/RR02-jawapan-betul.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-2cfc-8211-8a31-785f7b84277f/raw?se=2026-10-26T15%3A16%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-25T23%3A43%3A38Z&ske=2026-10-26T23%3A43%3A38Z&sks=b&skv=2026-02-06&sig=VhhkC/lX3F/qot37m%2BYJ6RQRU67SnSxsyElZ1Kdtcuw%3D' --output 'audio/voice/RR03-jawapan-salah.mp3'
+          test -s 'audio/voice/RR03-jawapan-salah.mp3'
+          curl --fail --location --retry 3 'https://sdmntprseasia.oaiusercontent.com/files/00000000-fc0c-8207-945f-8bc1ce8a06cc/raw?se=2026-10-26T15%3A16%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T00%3A23%3A45Z&ske=2026-10-27T00%3A23%3A45Z&sks=b&skv=2026-02-06&sig=Nc61Ll4G4ENzju1qYIVEJyuofTn%2BK2C9tCCgn/AYXL0%3D' --output 'audio/voice/RR04-penamat.mp3'
+          test -s 'audio/voice/RR04-penamat.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-b1cc-8211-81c0-1b118391e9ea/raw?se=2026-10-26T15%3A16%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T02%3A53%3A02Z&ske=2026-10-27T02%3A53%3A02Z&sks=b&skv=2026-02-06&sig=RjApDU9coDnjNa%2BAVG/csl8AdPVmMCZJjx35ICOvD8M%3D' --output 'audio/voice/RR05-nama-binatang.mp3'
+          test -s 'audio/voice/RR05-nama-binatang.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-98c0-8211-9b78-b54916fcd5e9/raw?se=2026-10-26T15%3A16%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T01%3A41%3A48Z&ske=2026-10-27T01%3A41%3A48Z&sks=b&skv=2026-02-06&sig=j%2BlRGxUHoUJyqSAZcx5pa/9AU1jN5BflkzDsTQWq1/0%3D' --output 'audio/music/1.mp3'
+          test -s 'audio/music/1.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-ed84-8211-984c-bcb41350c64d/raw?se=2026-10-26T15%3A16%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T01%3A23%3A41Z&ske=2026-10-27T01%3A23%3A41Z&sks=b&skv=2026-02-06&sig=CDG4b5yzryGIDqs5l4PowAiSOBKOjfJ66vPnpVAwfc0%3D' --output 'audio/music/2.mp3'
+          test -s 'audio/music/2.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-0cdc-8211-8b25-b9d190eab0d3/raw?se=2026-10-26T15%3A16%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-25T23%3A44%3A31Z&ske=2026-10-26T23%3A44%3A31Z&sks=b&skv=2026-02-06&sig=a75uaUoTqgVuWTk%2BjKWUER/xjh2wThI5CTpmHmIW/4o%3D' --output 'audio/music/3.mp3'
+          test -s 'audio/music/3.mp3'
+          curl --fail --location --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-ffd0-8211-9d2b-fd30d65646d6/raw?se=2026-10-26T15%3A16%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=d5e358c9-c2af-450b-bb2b-c087b140471e&skoid=fb469448-2cc9-41bd-a5a6-6e020952b47a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T02%3A21%3A36Z&ske=2026-10-27T02%3A21%3A36Z&sks=b&skv=2026-02-06&sig=3oK5JI563W3EVkF%2BnxR9qlVV90kDPefOqEU9IcjkJvc%3D' --output 'audio/music/4.mp3'
+          test -s 'audio/music/4.mp3'
+      - name: Commit audio and remove importer
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio
+          git rm .github/workflows/import-rimbaria-audio.yml
+          git commit -m "Add RimbaRia voice and background audio"
+          git push
