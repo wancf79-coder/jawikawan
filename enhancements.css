@@ -1,0 +1,32 @@
+.sound-controls{display:flex;gap:6px;align-items:center}
+.sound-btn{width:38px;height:38px;border:1px solid #dcebe5;border-radius:13px;background:#fff;box-shadow:0 5px 14px rgba(32,66,70,.08);cursor:pointer;font-size:17px;transition:.2s}
+.sound-btn:hover{transform:translateY(-2px)}
+.sound-btn.off{opacity:.52;filter:grayscale(1)}
+.audio-banner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin:0 0 16px;padding:13px 15px;background:#fff7d8;border:1px solid #f2d96e;border-radius:18px;box-shadow:0 7px 20px rgba(112,90,0,.08)}
+.audio-banner .audio-icon{font-size:28px}.audio-banner b{display:block}.audio-banner small{color:#705a00;font-weight:700}.audio-banner button{border:0;border-radius:12px;background:#17344d;color:#fff;padding:9px 12px;font-weight:900;cursor:pointer}
+.audio-ready{background:#e5fff1;border-color:#8bd7af}.audio-ready small{color:#087d58}
+.audio-meter{position:fixed;right:17px;bottom:95px;z-index:30;display:flex;align-items:end;gap:2px;height:22px;padding:5px 8px;background:rgba(23,52,77,.88);border-radius:999px;opacity:0;transform:scale(.85);transition:.2s;pointer-events:none}
+.audio-meter.talking{opacity:1;transform:scale(1)}
+.audio-meter i{display:block;width:3px;height:5px;background:#8effbf;border-radius:5px;animation:meter .55s ease-in-out infinite alternate}
+.audio-meter i:nth-child(2){animation-delay:.14s}.audio-meter i:nth-child(3){animation-delay:.28s}.audio-meter i:nth-child(4){animation-delay:.08s}
+@keyframes meter{to{height:14px}}
+.hero{isolation:isolate}.hero>*{position:relative;z-index:2}.hero-orb{position:absolute;z-index:1;border-radius:50%;background:rgba(255,255,255,.12);animation:drift 5s ease-in-out infinite}.hero-orb.one{width:70px;height:70px;right:85px;top:18px}.hero-orb.two{width:32px;height:32px;right:35px;top:62px;animation-delay:-2s}
+@keyframes drift{50%{transform:translate(7px,-10px) scale(1.08)}}
+.world{animation:slideUp .45s both}.world:nth-child(2){animation-delay:.07s}.world:nth-child(3){animation-delay:.14s}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}}
+.world-icon{animation:iconWiggle 3.2s ease-in-out infinite}.world:nth-child(2) .world-icon{animation-delay:-1s}.world:nth-child(3) .world-icon{animation-delay:-2s}
+@keyframes iconWiggle{0%,82%,100%{transform:rotate(0)}88%{transform:rotate(-7deg) scale(1.06)}94%{transform:rotate(7deg) scale(1.06)}}
+.picture-card{overflow:hidden;animation:cardIn .42s cubic-bezier(.2,.9,.3,1.2)}
+.picture-card:before,.picture-card:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.55);animation:bubble 5s linear infinite}.picture-card:before{width:24px;height:24px;left:14%;bottom:-30px}.picture-card:after{width:14px;height:14px;right:18%;bottom:-20px;animation-delay:-2s}
+@keyframes cardIn{from{opacity:0;transform:scale(.92) translateY(12px)}}@keyframes bubble{to{transform:translateY(-330px);opacity:0}}
+.picture-card.correct-burst .animal-picture{animation:happyJump .65s ease}
+.picture-card.wrong-wobble{animation:softShake .46s ease}
+@keyframes happyJump{30%{transform:translateY(-28px) rotate(-8deg) scale(1.12)}60%{transform:translateY(2px) rotate(7deg) scale(1.05)}}@keyframes softShake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.answer{transition:transform .2s,opacity .2s,background .2s}.answer:not(.correct):not(.wrong):hover{transform:translateY(-3px)}
+.confetti-piece{position:fixed;z-index:100;width:10px;height:16px;top:-22px;border-radius:3px;pointer-events:none;animation:confettiFall var(--fall,1.7s) cubic-bezier(.2,.7,.25,1) forwards}
+@keyframes confettiFall{to{transform:translate(var(--drift,0),110vh) rotate(var(--spin,620deg));opacity:.2}}
+.spark{position:absolute;z-index:4;font-size:23px;pointer-events:none;animation:sparkOut .75s ease-out forwards}
+@keyframes sparkOut{to{transform:translate(var(--x),var(--y)) scale(.2) rotate(90deg);opacity:0}}
+.trophy{animation:trophyDance 1.2s ease-in-out infinite alternate;display:inline-block}@keyframes trophyDance{to{transform:translateY(-9px) rotate(5deg) scale(1.04)}}
+@media(max-width:600px){.stats .pill{display:none}.sound-btn{width:36px;height:36px}.audio-banner{grid-template-columns:auto 1fr}.audio-banner button{grid-column:1/-1}.topbar{gap:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
